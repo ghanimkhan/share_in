@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+    defaultConfig {
+        applicationId "net.nitroshare.android"
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 40
+        versionName "0.4.0.39"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:27.1.1'
+    compile 'com.android.support:design:27.1.1'
+    compile 'com.android.support:recyclerview-v7:27.1.1'
+    compile 'com.github.apl-devs:appintro:v4.2.2'
+    compile 'com.google.code.gson:gson:2.8.6'
+    compile 'com.squareup.picasso:picasso:2.71828'
+}
+
+repositories {
+    maven {
+        url 'https://maven.google.com'
+    }
+    maven {
+        url 'https://jitpack.io'
+    }
+}
